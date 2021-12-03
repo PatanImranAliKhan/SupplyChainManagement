@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+
+  
+#navbar {
+    position: relative;
+    width: 100%;
+    height: 9vh;
+    top: 0;
+    background-color: #f59609;
+    z-index: 999;
+}
+  
+#navbar .navbar-toggler-icon {
+    padding: 4px;
+}
+  
+#navbar .logo {
+    color: #000;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 125px;
+}
+  
+#navbar .nav-link,
+#navbar .navbar-toggler-icon i {
+    color: #000;
+}
+  
+#navbar .nav-link.btn {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+  
+.fixed {
+    position: fixed;
+}
+  
+#navbar.fixed {
+    background: #fff;
+    -webkit-box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.2);
+}
+  
+#navbar.fixed .logo {
+    color: #333;
+}
+
+.nav-item
+{
+    margin: 0 8px;
+}
+  
+#navbar.fixed .nav-link,
+#navbar.fixed .navbar-toggler-icon i {
+    color: #333;
+}
+  
+#navbar.fixed .nav-link.btn {
+    color: #fff;
+}
+
+.nav-link
+{
+    font-size: 18px;
+}
