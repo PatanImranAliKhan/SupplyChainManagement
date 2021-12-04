@@ -36,3 +36,50 @@ body {
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+
+.main-content {
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+.user-info {
+	display: flex;
+	align-items: center;
+}
+
+.card
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+.user-info__img img {
+	margin-right: 15px;
+	height: 55px;
+	width: 55px;
+	border-radius: 45px;
+	border: 3px solid #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h6
+{
+    margin-bottom: 5px;
+}
+#search
+{
+    border-radius: 5px 0px 0px 5px;
+    height: 40px;
+}
+.searchbut
+{
+	width: 65px;
+    background-color: rgb(191, 204, 204);
+    border: 1px solid orange;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.anchor
+{
+    text-decoration: none;
+    color: #fff;
+}

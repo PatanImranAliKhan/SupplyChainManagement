@@ -4,20 +4,50 @@ const friendRouter=express.Router()
 
 const friends=require('../models/FriendsModel')
 
+const user=require('../models/userModel')
+
 friendRouter.route('/friendRequests/:email').get((req,res,next) => {
     friends.find({ $or:[ {'requestedBy':req.params.email}, {'requestedTo':req.params.email}]})
     .then((resp) => {
         res.statusCode = 200;
         res.setHeader('content-type', 'text/json')
-        if(resp.length==0)
-        {
-            res.statusCode = 403;
-            res.json({'Error':'Invalid credentials'})
-        }
-        else
-        {
-            res.send(resp);
-        }
+        res.send(resp);
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
+friendRouter.route('/newRequests/:email').get((req,res,next) => {
+    friends.find({'requestedTo':req.params.email,status: false})
+    .then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/json')
+        res.send(resp);
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
+friendRouter.route('/Requestedusers/:email').get((req,res,next) => {
+    friends.find({'requestedBy':req.params.email,status: false})
+    .then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/json')
+        res.send(resp);
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
+friendRouter.route('/friends/:email').get((req,res,next) => {
+    friends.find({ $or:[ {'requestedBy':req.params.email}, {'requestedTo':req.params.email}],status: true})
+    .then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/json')
+        res.send(resp);
     })
     .catch((err) => {
         next(err)
@@ -29,15 +59,19 @@ friendRouter.route('/all').get((req,res,next) => {
     .then((resp) => {
         res.statusCode = 200;
         res.setHeader('content-type', 'text/json')
-        if(resp.length==0)
-        {
-            res.statusCode = 403;
-            res.json({'Error':'No friendss had been registered'})
-        }
-        else
-        {
-            res.send(resp)
-        }
+        res.send(resp);
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
+friendRouter.route('/getallusers/:email').get((req,res,next) => {
+    user.find({email: {$ne: req.params.email}})
+    .then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/json')
+        res.send(resp);
     })
     .catch((err) => {
         next(err)

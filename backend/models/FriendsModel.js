@@ -27,6 +27,12 @@ const friendschema=new mongoose.Schema({
     status : {
         type: Boolean,
         default: false
+    },
+    user1Location : {
+        type: String
+    },
+    user2Location : {
+        type: String
     }
 })
 

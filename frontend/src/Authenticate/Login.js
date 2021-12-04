@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function Login() {
 
-    const [email, setemail] = useState("abc")
-    const [password, setpassword] = useState("pass")
+    const [email, setemail] = useState("")
+    const [password, setpassword] = useState("")
     const [response, setresponse] = useState("")
     const [error, seterror] = useState("")
 

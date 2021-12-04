@@ -3,6 +3,8 @@ import aboutimg from '../assets/aboutimg.png'
 import imran from '../assets/imran.jpg';
 import Header from './Header'
 import  '../about.css';
+import irfan from '../assets/irfan.jpg';
+import yasir from '../assets/yasir.jpg';
 
 export default function About() {
     return (
@@ -61,7 +63,7 @@ export default function About() {
                     <div className="row">
                         <div className="col-lg-4 col-sm-6">
                             <div className="team-box" data-aos="fade-left" data-aos-delay="100">
-                                <img src={imran} width="100%" height="100%" alt="" />
+                                <img src={irfan} width="100%" height="100%" alt="" />
                                 <div className="team-info">
                                     <h4 className="text-muted">P. Irfan Ali Khan</h4>
                                     <p className="primary-color">Backend Developer</p>
@@ -70,19 +72,10 @@ export default function About() {
                         </div>
                         <div className="col-lg-4 col-sm-6">
                             <div className="team-box" data-aos="fade-left" data-aos-delay="200">
-                                <img src={imran} width="100%" height="100%" alt="" />
+                                <img src={yasir} width="100%" height="100%" alt="" />
                                 <div className="team-info">
-                                    <h4 className="text-muted">S. Krishna Vamsi</h4>
-                                    <p className="primary-color">Backend Developer</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-sm-6">
-                            <div className="team-box" data-aos="fade-left" data-aos-delay="300">
-                                <img src={imran} width="100%" height="100%" alt="" />
-                                <div className="team-info">
-                                    <h4 className="text-muted">S. Shanmukh Srinivas</h4>
-                                    <p className="primary-color">Data Scientist</p>
+                                    <h4 className="text-muted">Yasir</h4>
+                                    <p className="primary-color">Developer</p>
                                 </div>
                             </div>
                         </div>
