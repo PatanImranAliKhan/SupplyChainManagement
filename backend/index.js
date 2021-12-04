@@ -17,10 +17,12 @@ const port = process.env.port || 2500;
 const route=require('./routes/userRoute')
 const feedbackroute = require('./routes/FeedbackRoute')
 const friendsroute=require('./routes/FriendsRoute')
+const supplyroute=require('./routes/SupplyRequestRoute')
 
 app.use('/user',route)
 app.use('/feedback',feedbackroute)
 app.use('/friendrequest',friendsroute)
+app.use('/supply',supplyroute)
 
 
 

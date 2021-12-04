@@ -9,6 +9,7 @@ import Profile from "./Components/Profile";
 import Home from "./Components/Home";
 import Logout from "./Components/Logout";
 import Friends from "./Components/Friends";
+import SupplyRequest from "./Components/SupplyRequest";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/home" element={<Home/>} />
           <Route exact path="/logout" element={<Logout/>} />
           <Route exact path="/friends" element={<Friends/>} />
+          <Route exact path="/supplyRequest" element={<SupplyRequest/>} />
         </Routes>
 
       </Router>

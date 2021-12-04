@@ -24,6 +24,26 @@ UserRouter.route('/login/:email/:password').get((req,res,next) => {
     })
 })
 
+UserRouter.route('/getuser/:email').get((req,res,next) => {
+    user.find({email: req.params.email})
+    .then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('content-type', 'text/json')
+        if(resp.length==0)
+        {
+            res.statusCode = 403;
+            res.json({'Error':'Invalid credentials'})
+        }
+        else
+        {
+            res.send(resp);
+        }
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
 UserRouter.route('/all').get((req,res,next) => {
     user.find({})
     .then((resp) => {

@@ -13,21 +13,21 @@ export default function Login() {
     const history = useNavigate();
 
     const check=useState(JSON.parse(localStorage.getItem('data')|| '[]'))
-    CheckLoginOrNot(check[0])
-    function CheckLoginOrNot(check)
-    {
-        console.log(check.length)
-        console.log(check)
-        if(check.length!==0)
-        {
-            history('/home')
-        }
-    }
+    // CheckLoginOrNot(check[0])
+    // function CheckLoginOrNot(check)
+    // {
+    //     console.log(check.length)
+    //     console.log(check)
+    //     if(check.length!==0)
+    //     {
+    //         history('/home')
+    //     }
+    // }
 
 
     function Submit()
     {
-        fetch(`http://localhost:2500/user/login/${email}/${password}`)
+        fetch(`http://localhost:2500/user/getuser/${email}`)
         .then(async response => {
             const data = await response.json();
 
@@ -35,20 +35,42 @@ export default function Login() {
                 const error = (data && data.message) || response.statusText;
                 return Promise.reject(error);
             }
+            // alert(data,data.length)
+            if(data.length==0)
+            {
+                seterror("invalid email")
+            }
+            else
+            {
+                fetch(`http://localhost:2500/user/login/${email}/${password}`)
+                .then(async response => {
+                    const data2 = await response.json();
 
-            console.log(data)
-            seterror("")
-            setresponse("login Successfull")
-            
-            localStorage.setItem('data',JSON.stringify(data[0]))
-            setTimeout(() => {
-                history('/home')
-            }, 2000);
+                    if (!response.ok) {
+                        const error = (data2 && data2.message) || response.statusText;
+                        return Promise.reject(error);
+                    }
+
+                    console.log(data2)
+                    seterror("")
+                    setresponse("login Successfull")
+                    
+                    localStorage.setItem('data',JSON.stringify(data2[0]))
+                    setTimeout(() => {
+                        history('/home')
+                    }, 2000);
+                })
+                .catch(error => {
+                    console.error('There was an error!', error);
+                    setresponse("")
+                    seterror("Incorrect password")
+                });
+            }
         })
         .catch(error => {
             console.error('There was an error!', error);
             setresponse("")
-            seterror("There was an error forbidden!!!")
+            seterror("Invalid Email Name Provided")
         });
         
     }

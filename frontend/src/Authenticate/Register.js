@@ -15,14 +15,14 @@ export default function Register() {
     const history = useNavigate();
 
     const check=useState(JSON.parse(localStorage.getItem('data')|| '[]'))
-    CheckLoginOrNot(check)
-    function CheckLoginOrNot(check)
-    {
-        if(check.length!==0)
-        {
-            history('/home')
-        }
-    }
+    // CheckLoginOrNot(check)
+    // function CheckLoginOrNot(check)
+    // {
+    //     if(check.length!==0)
+    //     {
+    //         history('/home')
+    //     }
+    // }
 
     function Submit() {
         fetch(`http://localhost:2500/user/adduser`, {

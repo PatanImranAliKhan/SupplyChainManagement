@@ -29,7 +29,7 @@ export default function Header() {
                                         <Link className="nav-link" to="/contact">ContactUs</Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link className="nav-link" to="/contact">Supply Requests</Link>
+                                        <Link className="nav-link" to="/supplyRequest">Supply Requests</Link>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="nav-link" to="/friends">Friends</Link>

@@ -69,6 +69,7 @@ friendRouter.route('/all').get((req,res,next) => {
 friendRouter.route('/getallusers/:email').get((req,res,next) => {
     user.find({email: {$ne: req.params.email}})
     .then((resp) => {
+        // console.log(resp)
         res.statusCode = 200;
         res.setHeader('content-type', 'text/json')
         res.send(resp);
